@@ -4,12 +4,15 @@ using System.Text;
 
 namespace Sweepstakes
 {
-    class Contestant
+    class Contestant //concurrent
     {
-        public string firstName;
-        public string lastName ;
-        public string email;
-        public string registrationNumber;
+        public User user;
+        //public string firstName;
+        //public string lastName ;
+        //public string email;
+        //public string registrationNumber;
+       
+       
 
     }
 }
