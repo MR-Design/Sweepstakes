@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Sweepstakes
 {
-    interface IInfo
+    class SweepstakesQueueManager
     {
+       // uses the Queue data structure as an underlying structure.
     }
 }
