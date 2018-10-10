@@ -6,6 +6,8 @@ namespace Sweepstakes
 {
     public class User
     {
+
+        int registrationNumber = 2018;
         // Here I will Collect User Info 
         //Neme, LastName , Email , Registration Number
 
@@ -21,8 +23,9 @@ namespace Sweepstakes
             string email = Console.ReadLine();
 
             // Maybe I need a Function To Save Registration Numbers
-            Console.Write("What is your Registration Number?");
-            string registrationNumber = Console.ReadLine();
+
+            int registrationNumber =+ 1; 
+            Console.Write(" your Registration Number s "+ registrationNumber);
         }
        
     }
