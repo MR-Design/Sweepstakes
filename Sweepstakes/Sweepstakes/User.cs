@@ -7,7 +7,7 @@ namespace Sweepstakes
     public class User
     {
 
-        int registrationNumber = 2018;
+        int Id = 2018;
         // Here I will Collect User Info 
         //Neme, LastName , Email , Registration Number
 
@@ -22,10 +22,13 @@ namespace Sweepstakes
             Console.Write("What is your Email adress?");
             string email = Console.ReadLine();
 
-            // Maybe I need a Function To Save Registration Numbers
 
-            int registrationNumber =+ 1; 
-            Console.Write(" your Registration Number s "+ registrationNumber);
+
+            // Maybe I need a Methode To Store the Registration Numbers =Id
+
+            
+            int Id = + 1;
+            Console.Write(" your Registration Number is = {0} ", Id);
         }
        
     }

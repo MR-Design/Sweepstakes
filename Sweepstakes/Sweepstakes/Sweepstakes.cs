@@ -4,39 +4,57 @@ using System.Text;
 
 namespace Sweepstakes
 {
-    class Sweepstakes
+    public class Sweepstakes
     {
+        Dictionary<int, Contestant> NewContestant = new Dictionary<int, Contestant>();
 
-        Sweepstakes(string name)
+
+        Sweepstakes(string name) // Tirages au Sort
         {
 
-            // Create a new dictionary of strings, with string keys.
-            //
-            Dictionary<string, string> NewUser =
-                new Dictionary<string, string>();
-
-            // Add some elements to the dictionary. There are no 
-            // duplicate keys, but some of the values are duplicates.
-            NewUser.Add("txt", "notepad.exe");
-            NewUser.Add("bmp", "paint.exe");
-            NewUser.Add("dib", "paint.exe");
-            NewUser.Add("rtf", "wordpad.exe");
-
-            // The Add method throws an exception if the new key is 
-            // already in the dictionary.
-            try
-            {
-                NewUser.Add("txt", "winword.exe");
-            }
-            catch (ArgumentException)
-            {
-                Console.WriteLine("An element with Key = \"txt\" already exists.");
-            }
+  
         }
 
 
-        //void RegisterContestant(Contestant contestant)
-        //string PickWinner()
-        //void PrintContestantInfo(Contestant contestant)
+
+
+
+        void RegisterContestant(Contestant contestant)
+        {
+            contestant.Infos();
+            NewContestant.Add(contestant.Id, contestant);
+            
+
+
+
+
+            // The Add method throws an exception if the new key is already in the dictionary.
+            //try
+            //{
+            //    NewContestant.Add(, "");
+            //}
+            //catch (ArgumentException)
+            //{
+            //    Console.WriteLine("An element with Key = \"contestant.Id\" already exists.");
+            //}
+        }
+
+
+        public void PickWinner()
+        {
+            int  winner;
+
+            //  random number who define infos from  ID
+            Random random = new Random();
+            winner = random.Next(2018, 3018);
+            Contestant winningContestant = NewContestant[winner];
+            PrintContestantInfo(winningContestant);
+        }
+
+
+        void PrintContestantInfo(Contestant contestant)
+        {
+            Console.WriteLine(" ID ={0}, First Name ={1}", contestant.Id, contestant.firstName);
+        }
     }
 }
