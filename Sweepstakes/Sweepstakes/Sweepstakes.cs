@@ -6,22 +6,26 @@ namespace Sweepstakes
 {
     public class Sweepstakes
     {
-        Dictionary<int, Contestant> NewContestant = new Dictionary<int, Contestant>();
 
+        public Dictionary<int, Contestant> NewContestant = new Dictionary<int, Contestant>();
+        string name;
 
-        Sweepstakes(string name) // Tirages au Sort
+        public string Name { get { return name; } }
+
+        public Sweepstakes(string name)
         {
-
-  
+            this.name = name;
         }
 
+        
 
 
-
-
-        void RegisterContestant(Contestant contestant)
+        public void RegisterContestant(Contestant contestant)
         {
             contestant.Infos();
+            int amount = NewContestant.Count;
+            contestant.Id += amount;
+            Console.Write(" your Registration Number is = {0} ", contestant.Id);
             NewContestant.Add(contestant.Id, contestant);
             
 
@@ -46,7 +50,7 @@ namespace Sweepstakes
 
             //  random number who define infos from  ID
             Random random = new Random();
-            winner = random.Next(2018, 3018);
+            winner = random.Next(0, 100000);
             Contestant winningContestant = NewContestant[winner];
             PrintContestantInfo(winningContestant);
         }
@@ -54,7 +58,7 @@ namespace Sweepstakes
 
         void PrintContestantInfo(Contestant contestant)
         {
-            Console.WriteLine(" ID ={0}, First Name ={1}", contestant.Id, contestant.firstName);
+            Console.WriteLine(" ID ={0}, First Name ={1}, Last Name = {2}", contestant.Id, contestant.firstName, contestant.lastName);
         }
     }
 }

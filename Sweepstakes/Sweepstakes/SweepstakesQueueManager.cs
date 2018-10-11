@@ -4,8 +4,23 @@ using System.Text;
 
 namespace Sweepstakes
 {
-    class SweepstakesQueueManager
+    public class SweepstakesQueueManager : ISweepstakesManager
     {
-       // uses the Queue data structure as an underlying structure.
+        Queue<Sweepstakes> QueueSweepstakes = new Queue<Sweepstakes>();
+
+
+            public  Sweepstakes GetSweepstakes( )
+            {
+                // Remove elements from the queue (first element)
+                return(QueueSweepstakes.Dequeue());
+             }
+            public void InsertSweepstakes(Sweepstakes sweepstakes)
+            {
+                // Add elements to the queue
+                QueueSweepstakes.Enqueue(sweepstakes);
+
+            }
+
+
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sweepstakes
 {
-    class Contestant //concurrent
+    public class Contestant //concurrent
     {
         public string firstName;
         public string lastName ;
@@ -22,8 +22,8 @@ namespace Sweepstakes
             Console.Write("What is your Email adress?");
              email = Console.ReadLine();
            
-             Id = +1;
-            Console.Write(" your Registration Number is = {0} ", Id);
+        
+            
         }
 
 

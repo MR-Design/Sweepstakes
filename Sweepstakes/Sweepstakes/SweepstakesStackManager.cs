@@ -4,8 +4,19 @@ using System.Text;
 
 namespace Sweepstakes
 {
-    class SweepstakesStackManager
+    public class SweepstakesStackManager: ISweepstakesManager
     {
-        //uses the Stack data structure as an underlying structure.
+        Stack<Sweepstakes> StackSweepstakes = new Stack<Sweepstakes>();
+        public Sweepstakes GetSweepstakes()
+        {
+            // remove item from the Stack (last element)
+            return(StackSweepstakes.Pop());
+        }
+        public void InsertSweepstakes(Sweepstakes sweepstakes)
+        {
+            // add items to the Stack
+            StackSweepstakes.Push(sweepstakes);
+      
+        }
     }
 }
