@@ -6,10 +6,10 @@ namespace Sweepstakes
 {
     public class Sweepstakes
     {
-
+        public int counter;
         public Dictionary<int, Contestant> NewContestant = new Dictionary<int, Contestant>();
-        string name;
 
+        string name;
         public string Name { get { return name; } }
 
         public Sweepstakes(string name)
@@ -17,46 +17,27 @@ namespace Sweepstakes
             this.name = name;
         }
 
-        
-
 
         public void RegisterContestant(Contestant contestant)
         {
             contestant.Infos();
-            int amount = NewContestant.Count;
-            contestant.Id += amount;
-            Console.Write(" your Registration Number is = {0} ", contestant.Id);
+             counter = NewContestant.Count;
+            contestant.Id += counter;
+            Console.Write("Your Registration Number is = {0} ", contestant.Id);
             NewContestant.Add(contestant.Id, contestant);
-            
-
-
-
-
-            // The Add method throws an exception if the new key is already in the dictionary.
-            //try
-            //{
-            //    NewContestant.Add(, "");
-            //}
-            //catch (ArgumentException)
-            //{
-            //    Console.WriteLine("An element with Key = \"contestant.Id\" already exists.");
-            //}
         }
-
-
         public void PickWinner()
         {
             int  winner;
-
-            //  random number who define infos from  ID
             Random random = new Random();
-            winner = random.Next(0, 100000);
+            winner = random.Next(0, counter);
             Contestant winningContestant = NewContestant[winner];
             PrintContestantInfo(winningContestant);
+            Console.Write("The Winner is = {0} ", winningContestant);
+            Console.WriteLine();
+
         }
-
-
-        void PrintContestantInfo(Contestant contestant)
+        public void PrintContestantInfo(Contestant contestant)
         {
             Console.WriteLine(" ID ={0}, First Name ={1}, Last Name = {2}", contestant.Id, contestant.firstName, contestant.lastName);
         }

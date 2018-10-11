@@ -6,7 +6,7 @@ namespace Sweepstakes
 {
     public class MarketingFirm
     {
-        private ISweepstakesManager _SweepstakesManagerType;
+        public  ISweepstakesManager _SweepstakesManagerType;
         public MarketingFirm(ISweepstakesManager SweepstakesManagerType)
         {
             SweepstakesManagerType = _SweepstakesManagerType;

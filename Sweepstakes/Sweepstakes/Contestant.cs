@@ -9,7 +9,7 @@ namespace Sweepstakes
         public string firstName;
         public string lastName ;
         public string email;
-        public int Id = 2018;
+        public int Id = 0;
 
         public void Infos()
         {
@@ -20,12 +20,7 @@ namespace Sweepstakes
             lastName = Console.ReadLine();
 
             Console.Write("What is your Email adress?");
-             email = Console.ReadLine();
-           
-        
-            
+             email = Console.ReadLine();          
         }
-
-
 }
 }

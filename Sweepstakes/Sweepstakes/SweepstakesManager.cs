@@ -7,7 +7,7 @@ namespace Sweepstakes
     public class SweepstakesManager
     {
         public string Input;
-        public ISweepstakesManager GetSweepstakes()
+        public  ISweepstakesManager GetSweepstakes()
         {
             Console.WriteLine(" [Q] Get By SweepstakesQueueManager /n1. [S] Get By SweepstakesStackManager / n2");
             Input = Console.ReadLine();
