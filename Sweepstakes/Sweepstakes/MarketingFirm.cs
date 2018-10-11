@@ -4,7 +4,16 @@ using System.Text;
 
 namespace Sweepstakes
 {
-    class MarketingFirm
+    public class MarketingFirm
     {
+        private ISweepstakesManager _SweepstakesManagerType;
+        public MarketingFirm(ISweepstakesManager SweepstakesManagerType)
+        {
+            SweepstakesManagerType = _SweepstakesManagerType;
+        }
+        public void Use()
+        { 
+        }
+
     }
 }
