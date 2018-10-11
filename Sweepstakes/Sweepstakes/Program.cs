@@ -7,20 +7,17 @@ namespace Sweepstakes
         Contestant contestant = new Contestant();
         static void Main(string[] args)
         {
-            Sweepstakes WinACar = new Sweepstakes("Win a Car");
-            
-           
-            Contestant a = new Contestant();
-            Contestant b = new Contestant();
-            Contestant c = new Contestant();
+            Sweepstakes WinSothing = new Sweepstakes("Win Somthing");
+            Contestant aa = new Contestant();
+            Contestant bb = new Contestant();
+            Contestant cc = new Contestant();
+            WinSothing.RegisterContestant(aa);
+            WinSothing.RegisterContestant(bb);
+            WinSothing.RegisterContestant(cc);
+            Console.WriteLine();
 
+            SweepstakesManager sweepstakesManager = new SweepstakesManager();
 
-            WinACar.RegisterContestant(a);
-            WinACar.RegisterContestant(b);
-            WinACar.RegisterContestant(c);
-
-            Console.ReadKey();
-           // Console.WriteLine()
 
         }
     }

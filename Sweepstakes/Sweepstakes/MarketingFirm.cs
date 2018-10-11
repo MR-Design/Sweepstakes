@@ -11,9 +11,10 @@ namespace Sweepstakes
         {
             SweepstakesManagerType = _SweepstakesManagerType;
         }
-        public void Use()
-        { 
+        public void Use(ISweepstakesManager _SweepstakesManagerType, Sweepstakes sweepstakes )
+        {
+            _SweepstakesManagerType.GetSweepstakes();
+            _SweepstakesManagerType.InsertSweepstakes(sweepstakes);
         }
-
     }
 }
